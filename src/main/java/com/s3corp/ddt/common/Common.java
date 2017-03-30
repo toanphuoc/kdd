@@ -1,6 +1,7 @@
 package com.s3corp.ddt.common;
 
 import com.s3corp.ddt.action.ActionBase;
+import com.s3corp.ddt.logger.Log;
 
 public class Common {
 
@@ -12,7 +13,7 @@ public class Common {
 //		
 //		ActionBase  cloneSendText = ActionCache.getActionBase("SEND_Text");
 //		cloneSendText.perform(new String[]{"s", "s1"});
-		
+
 		ActionBase openBrowser = ActionCache.getActionBase("OPEN_Browser");
 		openBrowser.perform(new String[]{"chrome", "https://google.com"});
 //		

@@ -23,20 +23,20 @@ public class BrowserImpl implements Browser{
 	
 	public void initBrowserDriver(BrowserType browserType){
 		switch (browserType) {
-		case CHROME:
-			String chromeDriverPath = DRIVER_PATH + "\\chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-			break;
-		case IE:
-			break;
-		case FIREFOX:
-			break;
-		case ANDROID:
-			break;
-		case IOS:
-			break;
-		default:
-			break;
+			case CHROME:
+				String chromeDriverPath = DRIVER_PATH + "\\chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+				break;
+			case IE:
+				break;
+			case FIREFOX:
+				break;
+			case ANDROID:
+				break;
+			case IOS:
+				break;
+			default:
+				break;
 		}
 	}
 	
@@ -48,7 +48,7 @@ public class BrowserImpl implements Browser{
 	public void openBrowser(String browserType, String url) {
 		BrowserType type = BrowserType.valueOf(browserType.toUpperCase());
 		
-		initBrowserDriver(type);
+		this.initBrowserDriver(type);
 		
 		switch (type) {
 			case CHROME:
@@ -112,7 +112,6 @@ public class BrowserImpl implements Browser{
 		return ele.getText();
 	}
 
-	
 	/**
 	 * Get attribute value of an element
 	 * @param locator
