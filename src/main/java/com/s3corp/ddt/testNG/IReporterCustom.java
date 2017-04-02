@@ -21,6 +21,7 @@ public class IReporterCustom implements IReporter{
         for (ISuiteResult sr : suiteResults.values()) {
             ITestContext tc = sr.getTestContext();
          //   System.out.println(tc.get)
+            System.out.println(tc.getName());
 
             System.out.println("Passed tests for suite '" + suiteName + "' is:" + tc.getPassedTests().getAllResults().size());
             System.out.println("Failed tests for suite '" + suiteName + "' is:" + tc.getFailedTests().getAllResults().size());

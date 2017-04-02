@@ -2,6 +2,7 @@ package com.s3corp.ddt.testNG;
 
 import com.s3corp.ddt.reader.TestCase;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -18,5 +19,11 @@ public class SimpleTest extends SimpleTestAbstract {
     @Test
     public void execute(){
         Assert.assertEquals(testCase.getCaseName(), "Toan");
+    }
+
+    @AfterMethod
+    public void tearDown(){
+        super.tearDown();
+        System.out.println("Tear down in simple test");
     }
 }
