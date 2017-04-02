@@ -11,7 +11,12 @@ public class ElementHelper {
 	public enum Locator{
 		ID, NAME, TAG_NAME, LINK, XPATH, CSS
 	}
-	
+
+	/**
+	 * Get web element locator by
+	 * @param locator
+	 * @return
+	 */
 	public static By getBy(String locator){
 		Locator type = Locator.valueOf(locator);
 		By by = null;
@@ -40,11 +45,23 @@ public class ElementHelper {
 		}
 		return by;
 	}
-	
+
+	/**
+	 * Find web element
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public static WebElement findElement(WebDriver driver, String locator){
 		return driver.findElement(getBy(locator));
 	}
-	
+
+	/**
+	 * Find list of web elements
+	 * @param driver
+	 * @param locator
+	 * @return
+	 */
 	public static List<WebElement> findElements(WebDriver driver, String locator){
 		return driver.findElements(getBy(locator));
 	}
