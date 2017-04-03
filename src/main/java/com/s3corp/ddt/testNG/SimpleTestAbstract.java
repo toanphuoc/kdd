@@ -1,5 +1,6 @@
 package com.s3corp.ddt.testNG;
 
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 /**
@@ -8,12 +9,16 @@ import org.testng.annotations.*;
 public class SimpleTestAbstract {
 
     @BeforeMethod
-    public void setUp(){
-        System.out.println("Setup");
+    public void setUp(ITestResult result){
+        System.out.println("Setup: ");
     }
 
     @AfterMethod
-    public void tearDown(){
-        System.out.println("Teardown");
+    public void tearDown(ITestResult result){
+        if(result.getStatus() == ITestResult.SUCCESS)
+            System.out.println("Pass");
+
+        if(result.getStatus() == ITestResult.FAILURE)
+            System.out.println("Failure");
     }
 }
